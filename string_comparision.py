@@ -1,21 +1,14 @@
 import difflib
-import pysrt
-import os,subprocess
-path = os.getcwd()
-omit={}
-add ={}
-omit_word=[]
-add_word=[]
-str = str.replace("  "," ").replace('  ',' ').replace('\r','').replace('\\nn','').replace('\\n','').replace('\\','').replace('\n','').replace('&nbsp;','')
-str=str[2:len(str)-2].lower()
-str_2=str_2.lower()
-str=str.split(' ')
-temp=str_2
+d = difflib.Differ()
+str = '#any string'
+str_2 = '#any seconf string'
+str_2 = str_2.lower()
+str = str.split(' ')
 str_2 = str_2.split(' ')
 i=0
 # comaprision between string B and string A
 # tells what has to be deleted and added in string B to make it as String A with the positions defined as 'i'
-result = list(d.compare(y, x))
+result = list(d.compare(str, str_2))
 result =  [v for v in result if v[0] != '?']
 for l in range(0,len(result)):
     print i,result1[l]
